@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #e0e2e4;
+    --sidebarbg: #FFFFFF;
+    --text-color: #1F2937;
+    --accent : #3e4756;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: Roboto condensed, serif;
+    color: var(--text-color);
+}
+
+.home-main {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+}
+
+#sidebar {
+    background-color: var(--sidebarbg);
+    width: 400px;
+    padding: 10px 20px;
+}
+
+#main-content {
+    background-color: var(--background);
+    padding:40px 60px;
+    width:100%;
+}
+
+#header {
+    display: flex;
+    padding: 20px;
+}
+
+
+

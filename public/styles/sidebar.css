@@ -1,0 +1,94 @@
+#header h1 {
+    margin: auto auto;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#list-header {
+    font-weight: 500;
+}
+
+#lists-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.sidebar-a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.2rem
+}
+
+.dots {
+    display: block;
+    margin: auto 0;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    outline:1px solid black;
+    margin-bottom:5px;
+}
+
+.list-name {
+    display: flex;
+    padding: 10px;
+}
+
+.list-item:hover {
+    background-color: var(--background);
+
+    .task-count {
+        background-color: var(--sidebarbg);
+        transition-duration: 0.4s;
+
+    }
+
+    transition-duration: 0.4s;
+}
+
+.list-p {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    word-break: break-all;
+}
+
+.task-count {
+    padding: 3px 8px;
+    margin: auto 10px auto 0;
+    border-radius: 5px;
+    background-color: var(--background);
+    border: 1px solid var(--accent);
+}
+
+.task-count-p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.add-sign {
+    display: block;
+    margin: auto 0;
+}
+
+.add-list-div {
+    border-radius: 5px;
+    outline:1px solid var(--accent);
+}
+
+.add-list-div:hover {
+    background-color: var(--background);
+    transition-duration: 0.4s;
+}
+
+.add-list-div:not(:hover), .list-item:not(:hover), .task-count:not(:hover) {
+    transition-duration: 0.4s;
+}
+
+#sidebar {
+    border-right: 1px solid var(--accent);
+}

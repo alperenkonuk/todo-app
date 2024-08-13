@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+<main class="home-main">
+    <%- include('sidebar') %>
+    <div id="main-content">
+        <div id="date-section">
+            <%- include('partials/greetings')%>
+        </div>
+        <% if(locals.list) { %>
+            <div id="list">
+                <div id="list-title-div">
+                    <form id="edit-title-form">
+                        <input id="title-input" class="edit-input task-item-p" type="text" autofocus onchange="handleTitleChange(event,'<%= list.id %>')">
+                        <label><h2 id="list-title"><%= list.title %></h2></label>
+                    </form>
+                    <a href="" class="title-btn-a" >
+                        <div class="title-btn-div">
+                            <img width="22" height="22"
+                                 src="https://img.icons8.com/external-thin-kawalan-studio/24/external-edit-text-chat-thin-kawalan-studio.png"
+                                 alt="external-edit-text-chat-thin-kawalan-studio"/>
+                        </div>
+                    </a>
+                </div>
+                <div id="tasks">
+                    <% list.tasks.forEach((task) => { %>
+                        <div class="task-item">
+                            <label class="checkbox-label">
+                                <input class="checkbox<% if(task.completed){ %> completed<% } %>" type="checkbox"
+                                       onchange="window.location.href='/list/<%= list.id %>/mark/<%= task.taskId %>'">
+                                <p class="task-item-p<% if(task.completed){ %> completed <% } %>"
+                                   onclick="window.location.href='/list/<%= list.id %>/mark/<%= task.taskId %>'"><%= task.text[0].toUpperCase() + task.text.slice(1, task.text.length) %></p>
+                            </label>
+                            <div class="buttons">
+                                <a href="/list/<%= list.id %>/edit/<%= task.taskId %>" class="buttons-a">
+                                    <div class="edit-btn">
+                                        <img width="22" height="22"
+                                             src="https://img.icons8.com/external-thin-kawalan-studio/24/external-edit-text-chat-thin-kawalan-studio.png"
+                                             alt="external-edit-text-chat-thin-kawalan-studio"/>
+                                    </div>
+                                </a>
+                                <a href="/list/<%= list.id %>/delete/<%= task.taskId %>" class="buttons-a">
+                                    <div class="delete-btn">
+                                        <img width="22" height="22" src="https://img.icons8.com/metro/26/trash.png"
+                                             alt="trash"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    <% }) %>
+                    <a href="/list/<%= list.id %>/createTask" class="new-task-a" onclick=setTask()>
+                        <div class="new-task-div">
+                            <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/plus-math.png"
+                                 alt="plus-math"
+                                 class="add-sign"/>
+                            <p>Create new Task</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-task">
+                    <form action="" method="post">
+
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
